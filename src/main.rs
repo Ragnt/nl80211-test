@@ -5,13 +5,7 @@ fn main() {
     let mut socket: Nl80211 = nl80211_ng::Nl80211::new().unwrap();
     let ifaces = socket.get_interfaces();
 
-    let first_iface: &Interface = ifaces.values().next().unwrap();
-
-    let channel_map = first_iface.get_frequency_list_simple();
-
-    println!(
-        "first_iface: {:?} | {:?}",
-        first_iface.name_as_string(),
-        channel_map
-    );
+    for iface in ifaces {
+        println!("{}", iface.1.pretty_print());
+    }
 }
