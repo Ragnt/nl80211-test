@@ -70,7 +70,7 @@ dependencies = [
 
 [[package]]
 name = "nl80211-ng"
-version = "0.1.7"
+version = "0.2.4"
 dependencies = [
  "neli",
  "neli-proc-macros",
